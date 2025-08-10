@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/administrator")
+@RequestMapping("/api/administrators")
 @Getter
 @Setter
 public class AdministratorStudentController {

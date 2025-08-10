@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/prof")
+@RequestMapping("api/profs")
 @Getter
 @Setter
 public class ProfController {

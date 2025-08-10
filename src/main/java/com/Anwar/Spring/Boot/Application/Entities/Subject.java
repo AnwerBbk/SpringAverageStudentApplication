@@ -1,5 +1,6 @@
 package com.Anwar.Spring.Boot.Application.Entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,8 +15,10 @@ public class Subject {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(length = 100)
-    private String name;
+    @JsonProperty("name")
+    private String Name;
     @Column(length = 100)
+    @JsonProperty("discrition")
     private String Dscription ;
     @OneToMany(mappedBy = "subject" , cascade = CascadeType.ALL)
     private List<Grade> Grade;
