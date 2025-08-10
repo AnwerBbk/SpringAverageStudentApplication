@@ -19,3 +19,4 @@ public class Professor extends User {
     public void enterGrade(){}
 
 }
+
