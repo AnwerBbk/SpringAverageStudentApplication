@@ -1,0 +1,64 @@
+package com.Anwar.Spring.Boot.Application.Controllers;
+
+import com.Anwar.Spring.Boot.Application.Entities.Classroom;
+import com.Anwar.Spring.Boot.Application.Repository.ClassroomRepository;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/classrooms")
+public class ClassroomController {
+
+    private final ClassroomRepository classroomRepository;
+
+    public ClassroomController(ClassroomRepository classroomRepository) {
+        this.classroomRepository = classroomRepository;
+    }
+
+    // CREATE
+    @PostMapping
+    public ResponseEntity<Classroom> addClassroom(@RequestBody Classroom classroom) {
+        classroom.setId(0L); // Let JPA generate the ID
+        Classroom saved = classroomRepository.save(classroom);
+        return ResponseEntity.status(HttpStatus.CREATED).body(saved);
+    }
+
+    // READ all
+    @GetMapping
+    public List<Classroom> getAllClassrooms() {
+        return classroomRepository.findAll();
+    }
+
+    // READ one by id
+    @GetMapping("/{id}")
+    public ResponseEntity<Classroom> getClassroomById(@PathVariable Long id) {
+        return classroomRepository.findById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+
+    // DELETE one
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteClassroomById(@PathVariable Long id) {
+        if (classroomRepository.existsById(id)) {
+            classroomRepository.deleteById(id);
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+    // DELETE all
+    @DeleteMapping("/all")
+    public ResponseEntity<Void> deleteAllClassrooms() {
+        classroomRepository.deleteAll();
+        return ResponseEntity.noContent().build();
+    }
+}
+
+
+
+
