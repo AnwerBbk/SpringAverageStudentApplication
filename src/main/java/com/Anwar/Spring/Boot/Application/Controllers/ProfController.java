@@ -2,13 +2,17 @@ package com.Anwar.Spring.Boot.Application.Controllers;
 
 import com.Anwar.Spring.Boot.Application.Entities.Professor;
 import com.Anwar.Spring.Boot.Application.Repository.ProfRepository;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("api/professor")
+@RequestMapping("api/prof")
+@Getter
+@Setter
 public class ProfController {
 
     private final ProfRepository profRepository;

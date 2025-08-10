@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -22,4 +25,7 @@ public class Student extends User {
     @JoinColumn(name = "administrator_id")
     @JsonBackReference
     private AdministratorStudent administrator;
+    @OneToMany(mappedBy = "student" , cascade = CascadeType.ALL)
+    private List<Grade> grades;
+
 }

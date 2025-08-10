@@ -2,6 +2,8 @@ package com.Anwar.Spring.Boot.Application.Controllers;
 
 import com.Anwar.Spring.Boot.Application.Entities.Classroom;
 import com.Anwar.Spring.Boot.Application.Repository.ClassroomRepository;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +12,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/classrooms")
+@Getter
+@Setter
 public class ClassroomController {
 
     private final ClassroomRepository classroomRepository;

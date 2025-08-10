@@ -2,7 +2,9 @@ package com.Anwar.Spring.Boot.Application.Controllers;
 
 import com.Anwar.Spring.Boot.Application.Entities.Student;
 import com.Anwar.Spring.Boot.Application.Repository.StudentRepository;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +14,8 @@ import java.util.Optional;
 @RestController
 @RequestMapping("api/students")
 @RequiredArgsConstructor
+@Getter
+@Setter
 public class StudentController {
 
     private final StudentRepository studentRepository;

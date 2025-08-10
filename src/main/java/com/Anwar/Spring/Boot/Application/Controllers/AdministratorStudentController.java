@@ -2,6 +2,8 @@ package com.Anwar.Spring.Boot.Application.Controllers;
 
 import com.Anwar.Spring.Boot.Application.Entities.AdministratorStudent;
 import com.Anwar.Spring.Boot.Application.Repository.AdministratorStudentRepository;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,6 +11,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/administrator")
+@Getter
+@Setter
 public class AdministratorStudentController {
 
     private final AdministratorStudentRepository administratorStudentRepository;
