@@ -22,9 +22,8 @@ public class StudentController {
 
     // CREATE
     @PostMapping
-    public ResponseEntity<Student> createStudent(@RequestBody Student student) {
-        Student savedStudent = studentRepository.save(student);
-        return ResponseEntity.ok(savedStudent);
+    public Student post(@RequestBody Student student) {
+        return studentRepository.save(student);
     }
 
     // READ all

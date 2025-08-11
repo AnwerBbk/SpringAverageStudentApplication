@@ -24,10 +24,8 @@ public class ClassroomController {
 
     // CREATE
     @PostMapping
-    public ResponseEntity<Classroom> addClassroom(@RequestBody Classroom classroom) {
-        classroom.setId(0L); // Let JPA generate the ID
-        Classroom saved = classroomRepository.save(classroom);
-        return ResponseEntity.status(HttpStatus.CREATED).body(saved);
+    public Classroom post(@RequestBody Classroom classroom) {
+        return classroomRepository.save(classroom);
     }
 
     // READ all

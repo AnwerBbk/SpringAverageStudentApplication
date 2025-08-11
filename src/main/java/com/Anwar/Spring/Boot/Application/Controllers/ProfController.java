@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/profs")
+@RequestMapping("api/prof")
 @Getter
 @Setter
 public class ProfController {
@@ -23,10 +23,10 @@ public class ProfController {
 
     // CREATE
     @PostMapping
-    public ResponseEntity<Professor> createProfessor(@RequestBody Professor professor) {
-        Professor savedProf = profRepository.save(professor);
-        return ResponseEntity.ok(savedProf);
+    public Professor post(@RequestBody Professor professor) {
+        return profRepository.save(professor);
     }
+
 
     // READ all
     @GetMapping

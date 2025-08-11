@@ -4,11 +4,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
-
+import lombok.NoArgsConstructor;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @MappedSuperclass
 public abstract class User {
 
@@ -32,12 +32,8 @@ public abstract class User {
     protected String password;
 
     public void signUp() {}
-
     public void login() {}
-
     public void logout() {}
-
     public void update() {}
-
     public void delete() {}
 }

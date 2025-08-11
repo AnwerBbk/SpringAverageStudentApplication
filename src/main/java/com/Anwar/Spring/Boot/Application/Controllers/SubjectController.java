@@ -21,10 +21,10 @@ public class SubjectController {
     }
 
     @PostMapping
-    public ResponseEntity<Subject> addSubject(@RequestBody Subject subject) {
-        Subject savedSubject = subjectRepository.save(subject);
-        return ResponseEntity.ok(savedSubject);
+    public Subject post(@RequestBody Subject subject) {
+        return subjectRepository.save(subject);
     }
+
 
     @GetMapping("/{id}")
     public ResponseEntity<Subject> getSubjectById(@PathVariable Long id) {

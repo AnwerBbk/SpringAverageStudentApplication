@@ -1,5 +1,6 @@
 package com.Anwar.Spring.Boot.Application.Entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -21,5 +22,6 @@ public class Subject {
     @JsonProperty("discrition")
     private String Dscription ;
     @OneToMany(mappedBy = "subject" , cascade = CascadeType.ALL)
+    @JsonBackReference
     private List<Grade> Grade;
 }

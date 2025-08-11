@@ -20,7 +20,7 @@ public class Student extends User {
     @ManyToOne
     @JoinColumn(name = "professor_id")
     @JsonBackReference
-    private Professor Professor;
+    private Professor professor;
     @ManyToOne
     @JoinColumn(name = "administrator_id")
     @JsonBackReference

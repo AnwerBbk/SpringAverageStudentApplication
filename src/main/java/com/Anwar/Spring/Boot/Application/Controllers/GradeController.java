@@ -22,9 +22,8 @@ public class GradeController {
     }
 
     @PostMapping
-    public ResponseEntity<Grade> createGrade(@RequestBody Grade grade) {
-        Grade saved = gradeRepository.save(grade);
-        return ResponseEntity.ok(saved);
+    public Grade post(@RequestBody Grade grade) {
+        return gradeRepository.save(grade);
     }
 
     @GetMapping

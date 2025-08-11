@@ -22,9 +22,8 @@ public class AdministratorStudentController {
     }
 
     @PostMapping
-    public ResponseEntity<AdministratorStudent> addAdministrator(@RequestBody AdministratorStudent administratorStudent) {
-        AdministratorStudent savedAdministratorStudent = administratorStudentRepository.save(administratorStudent);
-        return ResponseEntity.ok(savedAdministratorStudent);
+    public AdministratorStudent post(@RequestBody AdministratorStudent administratorStudent) {
+        return administratorStudentRepository.save(administratorStudent);
     }
 
     @GetMapping

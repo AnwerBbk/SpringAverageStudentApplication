@@ -1,5 +1,6 @@
 package com.Anwar.Spring.Boot.Application.Entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,12 +20,15 @@ public class Grade {
     private Double TpGrade;
     @ManyToOne
     @JoinColumn(name="professor_id")
+    @JsonBackReference
     private Professor professor;
     @ManyToOne
     @JoinColumn(name="student_id")
+    @JsonBackReference
     private Student student;
     @ManyToOne
     @JoinColumn(name="subject_id")
+    @JsonBackReference
     private Subject subject;
     public double CalculateSubjectGrade(){
         if(this.TpGrade==null) {
